@@ -1,0 +1,800 @@
+openapi: 3.1.0
+x-stoplight:
+  id: 7omyva68x1bt3
+info:
+  title: api-fwe-ss-24
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /trips:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trip'
+                  x-stoplight:
+                    id: 0h87pumia6x8k
+              examples:
+                Example 1:
+                  value:
+                    - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                      name: string
+                      description: string
+                      startDate: '2019-08-24T14:15:22Z'
+                      endDate: '2019-08-24T14:15:22Z'
+                      participants:
+                        - string
+                      destinations:
+                        - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                          name: string
+                          description: string
+                          startDate: '2019-08-24T14:15:22Z'
+                          endDate: '2019-08-24T14:15:22Z'
+                          activities:
+                            - string
+                          photos:
+                            - string
+                          createdAt: '2019-08-24T14:15:22Z'
+                          updatedAt: '2019-08-24T14:15:22Z'
+                          rating: 0
+                      image: string
+                      createdAt: '2019-08-24T14:15:22Z'
+                      updatedAt: '2019-08-24T14:15:22Z'
+          headers: {}
+      operationId: get-trips
+      x-stoplight:
+        id: smg9rweovwe8u
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: name
+        - schema:
+            type: string
+            format: date-time
+          in: query
+          name: date
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+              examples:
+                Example 1:
+                  value:
+                    id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                    name: string
+                    description: string
+                    startDate: '2019-08-24T14:15:22Z'
+                    endDate: '2019-08-24T14:15:22Z'
+                    participants:
+                      - string
+                    destinations:
+                      - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                        name: string
+                        description: string
+                        startDate: '2019-08-24T14:15:22Z'
+                        endDate: '2019-08-24T14:15:22Z'
+                        activities:
+                          - string
+                        photos:
+                          - string
+                        createdAt: '2019-08-24T14:15:22Z'
+                        updatedAt: '2019-08-24T14:15:22Z'
+                        rating: 0
+                    image: string
+                    createdAt: '2019-08-24T14:15:22Z'
+                    updatedAt: '2019-08-24T14:15:22Z'
+      operationId: post-trips
+      x-stoplight:
+        id: 7b8op6k1cypwc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - startDate
+                - endDate
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: 0hdfb3cudlnun
+                description:
+                  type: string
+                  x-stoplight:
+                    id: gp4c6uwrzaenz
+                startDate:
+                  type: string
+                  x-stoplight:
+                    id: z8tyevl560c9q
+                  format: date-time
+                endDate:
+                  type: string
+                  x-stoplight:
+                    id: 8gl3u0887eu3l
+                  format: date-time
+                image:
+                  type: string
+                  x-stoplight:
+                    id: jfp7lqxz53nvc
+                participants:
+                  type: array
+                  x-stoplight:
+                    id: kykxdujsovi9x
+                  items:
+                    x-stoplight:
+                      id: 0ki8t1p0parhm
+                    type: string
+                destinations:
+                  type: array
+                  x-stoplight:
+                    id: 2lfacm72tgdqa
+                  items:
+                    x-stoplight:
+                      id: 16ehov6yrnv0c
+                    type: string
+                    format: uuid
+  '/trips/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    delete:
+      summary: Your DELETE endpoint
+      tags: []
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-trips-id
+      x-stoplight:
+        id: cf3x1h9sewx0r
+    put:
+      summary: Your PUT endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: put-trips-id
+      x-stoplight:
+        id: tafaamyslgzl8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: a84oyw0i2bsvj
+                description:
+                  type: string
+                  x-stoplight:
+                    id: cka8cqnsflzp0
+                startDate:
+                  type: string
+                  x-stoplight:
+                    id: xeqj833b0fakv
+                  format: date-time
+                endDate:
+                  type: string
+                  x-stoplight:
+                    id: gsh3x6z2prin2
+                  format: date-time
+                image:
+                  type: string
+                  x-stoplight:
+                    id: q5stcmbo4e569
+                participants:
+                  type: array
+                  x-stoplight:
+                    id: 0ovn2uj0d8qve
+                  items:
+                    x-stoplight:
+                      id: y7v4y57l8av6q
+                    type: string
+                destinations:
+                  type: array
+                  x-stoplight:
+                    id: 8ufrkkpgkqaa1
+                  items:
+                    x-stoplight:
+                      id: enjcohy8mvulv
+                    type: string
+                    format: uuid
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+              examples:
+                Example 1:
+                  value:
+                    id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                    name: string
+                    description: string
+                    startDate: '2019-08-24T14:15:22Z'
+                    endDate: '2019-08-24T14:15:22Z'
+                    participants:
+                      - string
+                    destinations:
+                      - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                        name: string
+                        description: string
+                        startDate: '2019-08-24T14:15:22Z'
+                        endDate: '2019-08-24T14:15:22Z'
+                        activities:
+                          - string
+                        photos:
+                          - string
+                        createdAt: '2019-08-24T14:15:22Z'
+                        updatedAt: '2019-08-24T14:15:22Z'
+                        rating: 0
+                        trips:
+                          - {}
+                    image: string
+                    createdAt: '2019-08-24T14:15:22Z'
+                    updatedAt: '2019-08-24T14:15:22Z'
+      operationId: get-trips-id
+      x-stoplight:
+        id: x9pq6or9fz8mu
+  /destinations:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+                  x-stoplight:
+                    id: qwlpgjdntm6r5
+              examples:
+                Example 1:
+                  value:
+                    - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                      name: string
+                      description: string
+                      startDate: '2019-08-24T14:15:22Z'
+                      endDate: '2019-08-24T14:15:22Z'
+                      activities:
+                        - string
+                      photos:
+                        - string
+                      createdAt: '2019-08-24T14:15:22Z'
+                      updatedAt: '2019-08-24T14:15:22Z'
+                      rating: 0
+                      trips:
+                        - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                          name: string
+                          description: string
+                          startDate: '2019-08-24T14:15:22Z'
+                          endDate: '2019-08-24T14:15:22Z'
+                          participants:
+                            - string
+                          destinations:
+                            - {}
+                          image: string
+                          createdAt: '2019-08-24T14:15:22Z'
+                          updatedAt: '2019-08-24T14:15:22Z'
+          headers:
+            header-0:
+              schema:
+                type: string
+      operationId: get-destinatins
+      x-stoplight:
+        id: vk6erg0jrpqqh
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: name
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+              examples:
+                Example 1:
+                  value:
+                    id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                    name: string
+                    description: string
+                    startDate: '2019-08-24T14:15:22Z'
+                    endDate: '2019-08-24T14:15:22Z'
+                    activities:
+                      - string
+                    photos:
+                      - string
+                    createdAt: '2019-08-24T14:15:22Z'
+                    updatedAt: '2019-08-24T14:15:22Z'
+                    rating: 0
+      operationId: post-destinatins
+      x-stoplight:
+        id: txtgubwu6nmdo
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - startDate
+                - endDate
+                - activities
+                - trips
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: r463ym1d613rc
+                description:
+                  type: string
+                  x-stoplight:
+                    id: lmzujpv2yoch8
+                startDate:
+                  type: string
+                  x-stoplight:
+                    id: euprscnqqr5rh
+                  format: date-time
+                endDate:
+                  type: string
+                  x-stoplight:
+                    id: bkw1el6gh12y4
+                  format: date-time
+                activities:
+                  type: array
+                  x-stoplight:
+                    id: t9xshzunfbsao
+                  items:
+                    x-stoplight:
+                      id: yj2jmndubqdje
+                    type: string
+                photos:
+                  type: array
+                  x-stoplight:
+                    id: w42hczgeuac9u
+                  items:
+                    x-stoplight:
+                      id: 61y1tltzwwwni
+                    type: string
+                rating:
+                  type: number
+                  x-stoplight:
+                    id: xddxhj38urgij
+                  minimum: 0
+                  maximum: 5
+                trips:
+                  type: array
+                  x-stoplight:
+                    id: q4b2bv1ax9pz7
+                  items:
+                    x-stoplight:
+                      id: oaspukcemhzps
+                    type: string
+                    format: uuid
+    parameters: []
+  '/destinations/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Your PUT endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+      operationId: put-destinations-id
+      x-stoplight:
+        id: vfp6hvlml6eix
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: 3ze3tmpg1y3mm
+                description:
+                  type: string
+                  x-stoplight:
+                    id: 9xhi4tjy7l0yc
+                startDate:
+                  type: string
+                  x-stoplight:
+                    id: q120d9zaot3r6
+                  format: date-time
+                endDate:
+                  type: string
+                  x-stoplight:
+                    id: jlrfwioe5vl9q
+                  format: date-time
+                activities:
+                  type: array
+                  x-stoplight:
+                    id: f50t8i4l5rxok
+                  items:
+                    x-stoplight:
+                      id: n6yx4ral6oq1w
+                    type: string
+                photos:
+                  type: array
+                  x-stoplight:
+                    id: itva1qqzjg5bn
+                  items:
+                    x-stoplight:
+                      id: 2135oul8095bh
+                    type: string
+                rating:
+                  type: number
+                  x-stoplight:
+                    id: 0wo9fy0asl38s
+                  minimum: 0
+                  maximum: 5
+                trips:
+                  type: array
+                  x-stoplight:
+                    id: p9mn6mxe3tbsl
+                  items:
+                    x-stoplight:
+                      id: xo175tgs148hf
+                    type: string
+                    format: uuid
+    delete:
+      summary: Your DELETE endpoint
+      tags: []
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-destinations-id
+      x-stoplight:
+        id: a5znxoed8r856
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Destination'
+      operationId: get-destinations-id
+      x-stoplight:
+        id: 5x51ybmuld9ga
+  '/trips/{id}/destinations':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Destination'
+                  x-stoplight:
+                    id: k2fuju0kk6gcu
+              examples:
+                Example 1:
+                  value:
+                    - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                      name: string
+                      description: string
+                      startDate: '2019-08-24T14:15:22Z'
+                      endDate: '2019-08-24T14:15:22Z'
+                      activities:
+                        - string
+                      photos:
+                        - string
+                      createdAt: '2019-08-24T14:15:22Z'
+                      updatedAt: '2019-08-24T14:15:22Z'
+                      rating: 0
+                      trips:
+                        - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                          name: string
+                          description: string
+                          startDate: '2019-08-24T14:15:22Z'
+                          endDate: '2019-08-24T14:15:22Z'
+                          participants:
+                            - string
+                          destinations:
+                            - {}
+                          image: string
+                          createdAt: '2019-08-24T14:15:22Z'
+                          updatedAt: '2019-08-24T14:15:22Z'
+      operationId: get-trips-id-destinations
+      x-stoplight:
+        id: aw31451z7xhk7
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+              examples:
+                Example 1:
+                  value:
+                    id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                    name: string
+                    description: string
+                    startDate: '2019-08-24T14:15:22Z'
+                    endDate: '2019-08-24T14:15:22Z'
+                    participants:
+                      - string
+                    destinations:
+                      - id: 497f6eca-6276-4993-bfeb-53cbbbba6f08
+                        name: string
+                        description: string
+                        startDate: '2019-08-24T14:15:22Z'
+                        endDate: '2019-08-24T14:15:22Z'
+                        activities:
+                          - string
+                        photos:
+                          - string
+                        createdAt: '2019-08-24T14:15:22Z'
+                        updatedAt: '2019-08-24T14:15:22Z'
+                        rating: 0
+                        trips:
+                          - {}
+                    image: string
+                    createdAt: '2019-08-24T14:15:22Z'
+                    updatedAt: '2019-08-24T14:15:22Z'
+      operationId: post-trips-id-destinations
+      x-stoplight:
+        id: tw971ez2typ5j
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                x-stoplight:
+                  id: i1rz1ly34ykhg
+                type: string
+                format: uuid
+  '/trips/{tripId}/destinations/{destinationIds}':
+    parameters:
+      - schema:
+          type: string
+        name: tripId
+        in: path
+        required: true
+      - schema:
+          type: string
+          deprecated: false
+        name: destinationIds
+        in: path
+        required: true
+    delete:
+      summary: Your DELETE endpoint
+      tags: []
+      responses:
+        '204':
+          description: No Content
+      operationId: delete-trips-tripId-destinations-destinationId
+      x-stoplight:
+        id: kw2evf3yd1tz5
+  '/destinations/{id}/trips':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trip'
+                  x-stoplight:
+                    id: f1bnphzs9a94a
+      operationId: get-destinations-id-trips
+      x-stoplight:
+        id: qykw622k4iekl
+components:
+  schemas:
+    Trip:
+      title: Trip
+      x-stoplight:
+        id: p19kun8nzivv9
+      type: object
+      required:
+        - id
+        - name
+        - startDate
+        - endDate
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: htnq9wkcsx2ut
+          format: uuid
+        name:
+          type: string
+          x-stoplight:
+            id: go6xwbasxyl4z
+        description:
+          type: string
+          x-stoplight:
+            id: pqa65h6ocdqxn
+        startDate:
+          type: string
+          x-stoplight:
+            id: e8708wwc3kaap
+          format: date-time
+        endDate:
+          type: string
+          x-stoplight:
+            id: agzzka3mvdeha
+          format: date-time
+        participants:
+          type: array
+          x-stoplight:
+            id: 80e3uimqptspm
+          items:
+            x-stoplight:
+              id: a5jglnl1qthee
+            type: string
+        destinations:
+          type: array
+          x-stoplight:
+            id: 3xdpkrrz53108
+          items:
+            $ref: '#/components/schemas/Destination'
+            x-stoplight:
+              id: 8bcq2x4umzwdt
+        image:
+          type: string
+          x-stoplight:
+            id: kw6tbdv7sr8qo
+        createdAt:
+          type: string
+          x-stoplight:
+            id: jd9f0m651i2rw
+          format: date-time
+        updatedAt:
+          type: string
+          x-stoplight:
+            id: by3vgv7uqbq7k
+          format: date-time
+    Destination:
+      title: Destination
+      x-stoplight:
+        id: ntvwsrux8ai56
+      type: object
+      required:
+        - id
+        - name
+        - startDate
+        - endDate
+        - activities
+        - createdAt
+        - updatedAt
+        - trips
+      properties:
+        id:
+          type: string
+          x-stoplight:
+            id: ry90xufvqfnl5
+          format: uuid
+        name:
+          type: string
+          x-stoplight:
+            id: bsvz6l3k9qlci
+        description:
+          type: string
+          x-stoplight:
+            id: cbctg5yvebfdi
+        startDate:
+          type: string
+          x-stoplight:
+            id: aee9u6w1rr081
+          format: date-time
+        endDate:
+          type: string
+          x-stoplight:
+            id: s358unz7329h3
+          format: date-time
+        activities:
+          type: array
+          x-stoplight:
+            id: hi2x4kypjaf6j
+          items:
+            x-stoplight:
+              id: 6osnd91fzeibg
+            type: string
+        photos:
+          type: array
+          x-stoplight:
+            id: rd4gp9lb30kjo
+          items:
+            x-stoplight:
+              id: 2ek2wkw8ctza8
+            type: string
+        createdAt:
+          type: string
+          x-stoplight:
+            id: cbl7st6eizz0w
+          format: date-time
+        updatedAt:
+          type: string
+          x-stoplight:
+            id: bfmq2vafinek7
+          format: date-time
+        rating:
+          type: number
+          x-stoplight:
+            id: yun577k8godn2
+          minimum: 0
+          maximum: 5
+        trips:
+          type: array
+          x-stoplight:
+            id: jmgl7wslrfg32
+          items:
+            $ref: '#/components/schemas/Trip'
+            x-stoplight:
+              id: rqt024glzsqtb
